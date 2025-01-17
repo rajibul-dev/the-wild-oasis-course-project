@@ -1,6 +1,3 @@
-import logo from "./_components/Logo";
-import Navigation from "./_components/Navigation";
-
 import { Josefin_Sans } from "next/font/google";
 
 const josefin = Josefin_Sans({ subsets: ["latin"], display: "swap" });
