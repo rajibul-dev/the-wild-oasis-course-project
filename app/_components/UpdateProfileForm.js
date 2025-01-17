@@ -1,9 +1,7 @@
 "use client";
 
-export default function UpdateProfileForm({ children }) {
-  // CHANGE
-  const countryFlag = "pt.jpg";
-  const nationality = "portugal";
+export default function UpdateProfileForm({ guest, children }) {
+  const { fullName, email, nationality, nationalID, countryFlag } = guest;
 
   return (
     <form className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
@@ -11,6 +9,7 @@ export default function UpdateProfileForm({ children }) {
         <label>Full name</label>
         <input
           disabled
+          defaultValue={fullName}
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
         />
       </div>
@@ -19,6 +18,7 @@ export default function UpdateProfileForm({ children }) {
         <label>Email address</label>
         <input
           disabled
+          defaultValue={email}
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
         />
       </div>
@@ -40,6 +40,7 @@ export default function UpdateProfileForm({ children }) {
         <label htmlFor="nationalID">National ID number</label>
         <input
           name="nationalID"
+          defaultValue={nationalID}
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
         />
       </div>
